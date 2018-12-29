@@ -1,6 +1,24 @@
 <% @projects.each do |project| %>
-  <h1><%= project.title %></h1>
+  <h2><%= project.title %></h2>
   <% project.todos.each do |todo| %>
-    <h3><%= todo.text %></h3>
+    <li><%= todo.text %></li>
   <% end %>
+<% end %>
+
+<br>
+<h3>Новая Задача</h3>
+<div id="clickme">
+  <img src = "https://www.gisetc.com/wp-content/uploads/2016/06/icon_plus-box.png">
+</div>
+<%= form_for :todo, :html => { :class => 'new_todo', :style => "display: none;"} do |t|%>
+  <p>
+    <%= t.text_field :text %>
+  </p>
+  <p>
+  <%= select(:todo, "project_id", @projects.collect {|p| [ p.title, p.id ] }) %>
+  </p>
+  <p>
+    <%= link_to 'Отмена', "#", :class => 'abort' %>
+    <%= link_to 'OK', "#", :onclick=>"$('.new_todo').submit()" %>
+  </p>
 <% end %>

@@ -11,4 +11,14 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require jquery3
+//= require jquery_ujs
 //= require_tree .
+$(document).ready(function() {
+  $("#clickme").click(function() {
+    $(".new_todo").show("slow");
+  }); 
+    $(".abort").click(function() {
+    $(".new_todo").hide("slow");
+  });
+});
