@@ -1,0 +1,154 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @font-face {
+  font-family: 'DidactGothic';
+  src:url('DidactGothic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+* { 
+  font-family: DidactGothic, sans-serif; 
+}
+$projects: title;
+@each $project in $projects {
+  .#{$project} {
+  border-bottom: solid 1px;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-bottom: 1em;    
+  }
+}
+// .title {
+//   flex: 2 1 auto;
+// }
+.h1, .h2, .h3{
+  font-weight: bold;
+}
+.shapka {
+  width:100%;
+  height:80px;
+  color:white;
+  text-align:center;
+  background-color: DeepSkyBlue;
+  position: relative;
+  margin-bottom: 3em;
+}
+#shapka h2 {
+  margin:auto;
+  line-height:80px;
+  vertical-align:middle;
+}
+#shapka a {
+  margin:auto;
+  top: 0px;
+  right: 0px;
+  line-height:80px;
+  margin-right: 20px;
+}
+#shapka a img{
+  margin:auto;
+  vertical-align:middle;
+}
+#newTodoForm {
+  background-color: white;
+  overflow: auto;
+  width: 400px;
+
+}
+
+.todoTextField{
+  height: 40px;
+  margin-bottom: 10px;
+  width: 100%;
+  border: 1px solid;
+  padding: 8px;
+}
+#newTodoForm table{
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 10px;
+}
+#newTodoForm th{
+  width: 50%;
+  height: 40px;
+  background-color: grey;
+  border-radius: 5px;
+  color: white;
+}
+
+#newTodoForm th:hover{
+  background-color: cyan;
+}
+
+#newTodoForm th a{
+  color: white;
+}
+.allDiv {
+  display: flex;
+  flex-direction: row;
+  
+}
+.text {
+  box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
+  padding: 10px;
+  margin: 0 15px 15px 15px; 
+  float:left;
+}
+#overlay{
+  background:rgba(0,0,0,0.3);
+  display:none;
+  width:100%; 
+  height:100%;
+  position:absolute; 
+  top:0; 
+  left:0; 
+  z-index:1;
+}
+.cn{
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  padding: 2rem;
+}
+#newTodoForm .title{
+  text-align:center;
+}
+.select2-selection, .select2-selection__rendered, .select2-selection__arrow {
+  height: 40px !important;
+  span {
+    line-height: 40px !important;
+    text-align: left;
+  }
+}
+
+.select2-selection {
+   border-radius: 0 !important;
+}
+
+#newTodoForm .select2-container{
+  width: 100% !important;
+  margin-bottom: 10px;
+}
+.todoText{
+  margin-left: 2em;
+}
+
+input:checked  {
+  .todoText{
+  text-decoration: line-through;
+  }
+}

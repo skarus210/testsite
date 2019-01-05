@@ -1,24 +1,35 @@
-<% @projects.each do |project| %>
-  <h2><%= project.title %></h2>
-  <% project.todos.each do |todo| %>
-    <li><%= todo.text %></li>
+<div class='shapka'>
+  <h2>Задачи</h2>
+    <a id="clickme" href="#"><%= image_tag "addTodoIcon.png" %></a>
+</div>
+
+<div class="allDiv">
+  <% @projects.each do |project| %>
+    <div class="col-lg-4 col-md-6 col-s-12">
+      <div class='text'>
+        <div class='title'>
+          <%= project.title %>
+        </div>
+        <% project.todos.each do |todo| %>
+          <input class="box" type="checkbox" <%= if todo.isCompleted then "checked" end %> ><label class="todoText"><%= todo.text %></label><br/>
+        <% end %>
+      </div>
+    </div>
   <% end %>
+</div>
+
+<%= form_for :todo, :html => { :class => 'new_todo', :style => "display: none;"} do |t|%>
+  <div id="newTodoForm" class="cn">
+    <div class='title'>
+      Новая Задача
+    </div>
+    <%= t.text_field :text, :placeholder => "Название задачи...", :class => "todoTextField"  %><br>
+    <%= select(:todo, "project_id", @projects.collect {|p| [ p.title, p.id ] }, {:class => "select2-selection"}) %>
+    <table>
+      <th><%= link_to 'Отмена', "#", :class => 'abort' %></th>
+      <th><%= link_to 'OK', "#", :onclick=>"$('.new_todo').submit()" %></th>
+    </table>
+  </div>
 <% end %>
 
-<br>
-<h3>Новая Задача</h3>
-<div id="clickme">
-  <img src = "https://www.gisetc.com/wp-content/uploads/2016/06/icon_plus-box.png">
-</div>
-<%= form_for :todo, :html => { :class => 'new_todo', :style => "display: none;"} do |t|%>
-  <p>
-    <%= t.text_field :text %>
-  </p>
-  <p>
-  <%= select(:todo, "project_id", @projects.collect {|p| [ p.title, p.id ] }) %>
-  </p>
-  <p>
-    <%= link_to 'Отмена', "#", :class => 'abort' %>
-    <%= link_to 'OK', "#", :onclick=>"$('.new_todo').submit()" %>
-  </p>
-<% end %>
+<div id="overlay"></div>

@@ -17,8 +17,31 @@
 $(document).ready(function() {
   $("#clickme").click(function() {
     $(".new_todo").show("slow");
+    newTodoForm.style.display = "block";
+		$("#newTodoForm").css('z-index','2');
+    	$("#overlay").fadeIn(300);
   }); 
-    $(".abort").click(function() {
-    $(".new_todo").hide("slow");
+  $(".abort").click(function() {
+    window.location.href = "";
+  });
+  $('input').iCheck({
+    checkboxClass: 'icheckbox_square-blue',
+    radioClass: 'iradio_square-blue',
+    increaseArea: '20%' // optional
+  });
+  $('input').on('ifToggled', function(event){
+	  $(this).closest("form").submit();
+	});
+	$('.select2-selection').select2({
+		minimumResultsForSearch: -1
+  });
+  $("input:checkbox").change(function() {
+    if($(this).attr("checked") === true) {
+        // CHECKED, TO WHITE
+        $(this).parent().css({"text-decoration": "line-through;"});
+        return;
+    }
+    //NOT CHECKED, TO GREEN
+    $(this).parent().css({"background" : "#b4e3ac", "-moz-border-radius" : "5px"});
   });
 });
