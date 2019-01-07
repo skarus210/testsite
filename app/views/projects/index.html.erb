@@ -11,7 +11,11 @@
           <%= project.title %>
         </div>
         <% project.todos.each do |todo| %>
-          <input class="box" type="checkbox" <%= if todo.isCompleted then "checked" end %> ><label class="todoText"><%= todo.text %></label><br/>
+          <%= form_for todo do |f| %>
+            <div class='linetodo'>
+              <input class="box" type="checkbox" <%= if todo.isCompleted then "checked" end %> ><label class="todoText"><%= todo.text %></label><br/>
+            </div>
+          <% end %>
         <% end %>
       </div>
     </div>

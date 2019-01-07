@@ -47,19 +47,20 @@ $projects: title;
   position: relative;
   margin-bottom: 3em;
 }
-#shapka h2 {
+.shapka h2 {
   margin:auto;
   line-height:80px;
   vertical-align:middle;
 }
-#shapka a {
+.shapka a {
   margin:auto;
+  position: absolute;
   top: 0px;
   right: 0px;
   line-height:80px;
   margin-right: 20px;
 }
-#shapka a img{
+.shapka a img{
   margin:auto;
   vertical-align:middle;
 }
@@ -98,9 +99,10 @@ $projects: title;
   color: white;
 }
 .allDiv {
-  display: flex;
-  flex-direction: row;
-  
+  // display: flex;
+  // flex-direction: row;
+  position: relative;
+  height: 500px;
 }
 .text {
   box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
@@ -146,9 +148,6 @@ $projects: title;
 .todoText{
   margin-left: 2em;
 }
-
-input:checked  {
-  .todoText{
-  text-decoration: line-through;
-  }
+.linetodo {
+  margin-bottom: 1em;
 }

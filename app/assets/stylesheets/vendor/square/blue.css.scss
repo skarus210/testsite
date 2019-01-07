@@ -23,6 +23,9 @@
     .icheckbox_square-blue.checked {
         background-position: -48px 0;
     }
+    .icheckbox_square-blue.checked + label {
+        text-decoration: line-through;
+    }
     .icheckbox_square-blue.disabled {
         background-position: -72px 0;
         cursor: default;
