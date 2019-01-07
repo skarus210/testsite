@@ -64,11 +64,10 @@ GEM
     crass (1.0.4)
     erubi (1.8.0)
     execjs (2.7.0)
-    ffi (1.9.25-x64-mingw32)
-    ffi (1.9.25-x86-mingw32)
+    ffi (1.10.0-x64-mingw32)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
-    i18n (1.3.0)
+    i18n (1.5.1)
       concurrent-ruby (~> 1.0)
     jbuilder (2.8.0)
       activesupport (>= 4.2.0)
@@ -88,12 +87,9 @@ GEM
     minitest (5.11.3)
     multi_json (1.13.1)
     nio4r (2.3.1)
-    nokogiri (1.9.1-x64-mingw32)
-      mini_portile2 (~> 2.4.0)
-    nokogiri (1.9.1-x86-mingw32)
+    nokogiri (1.10.0-x64-mingw32)
       mini_portile2 (~> 2.4.0)
     pg (0.21.0-x64-mingw32)
-    pg (0.21.0-x86-mingw32)
     public_suffix (3.0.3)
     puma (3.12.0)
     rack (2.0.6)
@@ -127,7 +123,7 @@ GEM
     rb-inotify (0.10.0)
       ffi (~> 1.0)
     rubyzip (1.2.2)
-    sass (3.7.2)
+    sass (3.7.3)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -153,7 +149,7 @@ GEM
     tilt (2.0.9)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    tzinfo-data (1.2018.7)
+    tzinfo-data (1.2018.9)
       tzinfo (>= 1.0.0)
     uglifier (4.1.20)
       execjs (>= 0.3.0, < 3)
@@ -170,7 +166,6 @@ GEM
 
 PLATFORMS
   x64-mingw32
-  x86-mingw32
 
 DEPENDENCIES
   byebug
