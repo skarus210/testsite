@@ -13,7 +13,7 @@
         <% project.todos.each do |todo| %>
           <%= form_for todo do |f| %>
             <div class='linetodo'>
-              <input class="box" type="checkbox" <%= if todo.isCompleted then "checked" end %> ><label class="todoText"><%= todo.text %></label><br/>
+              <input type="checkbox" <%= if todo.isCompleted then "checked" end %> ><label class="todoText"><%= todo.text %></label><br/>
             </div>
           <% end %>
         <% end %>
